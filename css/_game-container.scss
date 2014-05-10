@@ -12,6 +12,10 @@ body {
   font-family: arial, sans-serif;
 }
 
+img {
+  pointer-events: none;
+}
+
 // Game container box
 .game-container {
   width: 1024px;
