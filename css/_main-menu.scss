@@ -3,6 +3,7 @@
   top: 0%;
   -webkit-transform: scale(1.2);
   right: -25%;
+  pointer-events: none;
 }
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
@@ -25,4 +26,5 @@
   bottom: 20%;
   text-align: center;
   width: 100%;
+  z-index: 20;
 }
