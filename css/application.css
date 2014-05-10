@@ -42,13 +42,18 @@ img {
   position: relative;
   top: 20%;
   text-align: center; }
+  .sc-intro--content img {
+    display: block;
+    margin: 0 auto; }
 
 .sc-intro--loading-bar {
   background: #000;
   height: 40px;
   border-radius: 6px; }
   .sc-intro--loading-bar::-webkit-progress-bar {
-    background: #425112; }
+    background: #425112;
+    border-radius: 6px;
+    overflow: hidden; }
   .sc-intro--loading-bar::-webkit-progress-value {
     background: #bada55; }
 
@@ -72,6 +77,9 @@ img {
   font-size: 3em;
   font-weight: bold;
   z-index: 5; }
+  .sc-main--title img {
+    display: block;
+    margin: 0 auto; }
 
 .sc-main--play {
   position: absolute;

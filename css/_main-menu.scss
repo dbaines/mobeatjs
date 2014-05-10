@@ -19,6 +19,11 @@
   font-size: 3em;
   font-weight: bold;
   z-index: 5;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .sc-main--play {
