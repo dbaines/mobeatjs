@@ -600,6 +600,8 @@ $(function(){
     // reset player variables
     player1.playerLife = 100;
     player2.playerLife = 100;
+    player1.playerLifeBar.attr("data-name", player1.playingAs.name);
+    player2.playerLifeBar.attr("data-name", player2.playingAs.name);
     updatePlayerLifeBars();
 
     // set idle frames by default

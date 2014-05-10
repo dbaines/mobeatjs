@@ -261,7 +261,15 @@ img {
   background: #222;
   border: 7px solid #ccc;
   height: 57px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5); }
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative; }
+  .sc-round--player-life:before {
+    content: attr(data-name);
+    position: absolute;
+    top: 5px;
+    right: 16px;
+    font-family: "hvdComic", sans-serif;
+    font-size: 1.3em; }
   .sc-round--player-life::-webkit-progress-bar {
     background: #222; }
   .sc-round--player-life::-webkit-progress-value {
@@ -270,6 +278,8 @@ img {
 
 .sc-round--player-life:first-child {
   -webkit-transform: rotateY(180deg); }
+  .sc-round--player-life:first-child:before {
+    -webkit-transform: rotateY(180deg); }
 
 .sc-round--player-life + .sc-round--player-life {
   float: right;
@@ -380,7 +390,9 @@ DONE
 * Animations for character select screen
 * Pause Button
 * Title screen
-* Preloader
+* Preloaderposition: absolute;
+top: 11px;
+right: 14px;
 * Level Select screen
 
 TODO
