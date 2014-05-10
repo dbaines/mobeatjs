@@ -18,14 +18,16 @@ img {
   width: 1024px;
   height: 768px;
   margin: 0 auto;
-  background: #222;
+  background: #222222 url("../images/ui/colour-bg.png") top left no-repeat;
   position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   overflow: hidden; }
 
 .game__screen {
-  display: none; }
+  display: none;
+  width: 100%;
+  height: 100%; }
 
 .sc-main--character {
   position: absolute;
@@ -147,6 +149,45 @@ img {
     width: 261%;
     margin-left: -110%;
     margin-top: -47%; }
+
+.sc-level--map {
+  background: url("../images/levels/map.jpg");
+  width: 100%;
+  height: 100%; }
+
+.sc-level--tile {
+  width: 20px;
+  height: 20px;
+  border: 10px solid blue;
+  background: blue;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition: all .4s;
+  box-shadow: 0 0 10px transparent; }
+  .sc-level--tile img {
+    width: 0px;
+    height: 0px;
+    -webkit-transition: all .4s; }
+  .sc-level--tile.sc-level--tile__01 {
+    top: 313px;
+    left: 818px; }
+  .sc-level--tile.sc-level--tile__02 {
+    top: 215px;
+    left: 156px; }
+  .sc-level--tile.sc-level--tile__03 {
+    top: 484px;
+    left: 351px; }
+  .sc-level--tile.selected {
+    width: 200px;
+    height: 150px;
+    border-radius: 0;
+    border: 8px solid #000;
+    -webkit-transform: translateX(-100px) translateY(-75px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); }
+    .sc-level--tile.selected img {
+      width: 200px;
+      height: 150px; }
 
 .scene-round {
   width: 100%;
@@ -277,7 +318,6 @@ img {
     text-transform: uppercase; }
 
 /*
-
 DONE
 * Timer
 * Character select screen
@@ -296,4 +336,6 @@ TODO
 * Success arrows
 * Failure arrows
 * Game over screen redesign
+* Locked characters
+* Unlocking characters by completing levels
 */

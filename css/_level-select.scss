@@ -1,0 +1,52 @@
+.sc-level--map {
+  background: url("../images/levels/map.jpg");
+  width: 100%;
+  height: 100%;
+}
+
+.sc-level--tile {
+  width: 20px;
+  height: 20px;
+  border: 10px solid blue;
+  background: blue;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition: all .4s;
+  box-shadow: 0 0 10px transparent;
+
+  img {
+    width: 0px;
+    height: 0px;
+    -webkit-transition: all .4s;
+  }
+
+  &.sc-level--tile__01 {
+    top: 313px;
+    left: 818px;
+  }
+
+  &.sc-level--tile__02 {
+    top: 215px;
+    left: 156px;
+  }
+
+  &.sc-level--tile__03 {
+    top: 484px;
+    left: 351px;
+  }
+
+  &.selected {
+    width: 200px;
+    height: 150px;
+    border-radius: 0;
+    border: 8px solid #000;
+    -webkit-transform: translateX(-100px) translateY(-75px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+
+    img {
+      width: 200px;
+      height: 150px;
+    }
+  }
+}

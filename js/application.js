@@ -113,6 +113,9 @@ $(function(){
   // All characters in an array
   var characters = [billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo];
 
+  // Levels
+  var gameLevel = "01";
+
   // Blank Character Image
   var blankCharacter = "images/characters/blank.png";
 
@@ -170,11 +173,12 @@ $(function(){
     }
 
   // Game DOM Elements
-  var gameScreens, scMainMenu, scInGame, scCharacterSelect;
+  var gameScreens, scIntro, scMainMenu, scInGame, scGameOver, scCharacterSelect;
   gameScreens = $(".game__screen");
   scIntro = $("#game__intro");
   scMainMenu = $("#game__main-menu");
   scCharacterSelect = $("#game__character-select");
+  scLevelSelect = $("#game__level-select");
   scInGame = $("#game__playing");
   scGameOver = $("#game__game-over");
 
@@ -403,12 +407,48 @@ $(function(){
 
   // Fight button
   $selected_fightButton.on("click", function(){
-    startRound();
+    startLevelSelect();
   });
 
   // Back button
   $selected_backButton.on("click", function(){
     startMainMenu();
+  });
+
+  // --------------------------------------------------------------
+  //
+  // LEVEL SELECT SCREEN
+  //
+  // --------------------------------------------------------------
+
+  var $levelSelectTiles = $(".sc-level--tile");
+
+  var setLevel = function(level){
+    gameLevel = "/images/levels/" + level + ".jpg";
+  }
+
+  var startLevelSelect = function(){
+    transitionToScene(scLevelSelect);
+  }
+
+  // Clicking on a level button
+  $levelSelectTiles.on("click", function(e){
+    e.preventDefault();
+    var $thisLevelTile = $(this);
+    $thisLevelTile.addClass("selected").siblings().removeClass("selected");
+    setLevel($thisLevelTile.data("level"));
+  });
+
+  // Back button
+  $("#levels__backBtn").on("click", function(e){
+    e.preventDefault();
+    startCharacterSelect();
+  });
+
+  // Fight button
+  $("#levels__fightBtn").on("click", function(e){
+    e.preventDefault();
+    startRound();
   });
 
   // --------------------------------------------------------------
@@ -577,16 +617,10 @@ $(function(){
   //
   // --------------------------------------------------------------
 
-  // Start at intro
-  startIntro();
-
-  // Start at main menu
-  // startMainMenu();
-
-  // Start at character select screen
+  // startIntro();
+  startMainMenu();
   // startCharacterSelect();
-
-  // Start Round
+  // startLevelSelect();
   // startRound();
 
 });

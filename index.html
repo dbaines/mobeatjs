@@ -16,7 +16,9 @@
 
       <!-- Main Menu Screen -->
       <div id="game__main-menu" class="game__screen">
-        <div id="main__logo" class="sc-main--title">MoBeat Battle</div>
+        <div id="main__logo" class="sc-main--title">
+          <img src="images/ui/logo.png" alt="mobeat battle" />
+        </div>
         <div id="main__character1" class="sc-main--character">
           <img src="images/characters/blank.png" />
         </div>
@@ -33,7 +35,7 @@
 
         <div class="character--navbar">
           <span id="character__backBtn">< Back</span>
-          <span id="character__fightBtn">Fight! ></span>
+          <span id="character__fightBtn">Choose Arena! ></span>
         </div>
 
         <div class="character--players">
@@ -89,6 +91,23 @@
       </div>
 
       <!-- Level Select -->
+      <div id="game__level-select" class="game__screen">
+        <div class="character--navbar">
+          <span id="levels__backBtn">< Back</span>
+          <span id="levels__fightBtn">Fight! ></span>
+        </div>
+        <div class="sc-level--map">
+          <div class="sc-level--tile sc-level--tile__01" data-level="01">
+            <img src="images/backgrounds/01.jpg" />
+          </div>
+          <div class="sc-level--tile sc-level--tile__02" data-level="02">
+            <img src="images/backgrounds/01.jpg" />
+          </div>
+          <div class="sc-level--tile sc-level--tile__03" data-level="03">
+            <img src="images/backgrounds/01.jpg" />
+          </div>
+        </div>
+      </div>
 
       <!-- InGame Screen -->
       <div id="game__playing" class="game__screen scene-round">

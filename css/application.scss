@@ -6,13 +6,13 @@ $character-height:        auto;
 @import "game-container";
 @import "main-menu";
 @import "character-select";
+@import "level-select";
 @import "scene-round";
 @import "overlays";
 
 
 
 /*
-
 DONE
 * Timer
 * Character select screen
@@ -31,4 +31,6 @@ TODO
 * Success arrows
 * Failure arrows
 * Game over screen redesign
+* Locked characters
+* Unlocking characters by completing levels
 */
