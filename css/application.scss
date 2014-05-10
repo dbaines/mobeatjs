@@ -2,6 +2,7 @@
 $arrow-container-width:   200px;
 $character-width:         390px;
 $character-height:        auto;
+$comic-font:              "hvdComic", sans-serif;
 
 @import "game-container";
 @import "intro";
@@ -10,7 +11,7 @@ $character-height:        auto;
 @import "level-select";
 @import "scene-round";
 @import "overlays";
-
+@import "../fonts/stylesheet";
 
 
 /*
@@ -23,9 +24,9 @@ DONE
 * Pause Button
 * Title screen
 * Preloader
+* Level Select screen
 
 TODO
-* Level Select screen
 * Character select keyboard controls
 * Falling arrows
 * Arrow sillhouette

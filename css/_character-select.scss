@@ -65,7 +65,9 @@
   h1 {
     margin: 0;
     padding: 20px 0 0;
+    font-family: $comic-font;
     font-size: 5em;
+    font-weight: normal;
     -webkit-transition: all .2s;
 
     &.transitioning {
@@ -75,8 +77,9 @@
   }
 
   p {
-    margin: 0;
+    margin: -22px 0 0 0;
     -webkit-transition: all .2s;
+    font-size: 1.3em;
 
     &.transitioning {
       -webkit-transform: translateY(90px);

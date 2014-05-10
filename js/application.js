@@ -243,6 +243,8 @@ $(function(){
       imagesToPreload.push(this.death1);
       imagesToPreload.push(this.death2);
     });
+    imagesToPreload.push("images/backgrounds/map.jpg");
+    imagesToPreload.push("images/backgrounds/01.jpg");
     var totalImagesToPreload = imagesToPreload.length;
 
     // Update progress bar with zero counter

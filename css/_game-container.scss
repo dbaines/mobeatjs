@@ -9,7 +9,7 @@ body {
   display: flex;
   align-items: center;
   background: #ccc;
-  font-family: arial, sans-serif;
+  font-family: sans-serif;
 }
 
 img {
@@ -41,5 +41,5 @@ img {
   padding: 15px 20px;
   border-radius: 6px;
   font-size: 1.4em;
-  font-weight: bold;
+  font-family: $comic-font;
 }
