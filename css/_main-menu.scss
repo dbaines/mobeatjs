@@ -6,8 +6,8 @@
 }
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
-  right: 0;
-  left: 90%;
+  right: auto;
+  left: -25%;
 }
 
 .sc-main--title {
@@ -17,6 +17,7 @@
   text-align: center;
   font-size: 3em;
   font-weight: bold;
+  z-index: 5;
 }
 
 .sc-main--play {

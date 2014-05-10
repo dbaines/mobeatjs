@@ -172,6 +172,7 @@ $(function(){
   // Game DOM Elements
   var gameScreens, scMainMenu, scInGame, scCharacterSelect;
   gameScreens = $(".game__screen");
+  scIntro = $("#game__intro");
   scMainMenu = $("#game__main-menu");
   scCharacterSelect = $("#game__character-select");
   scInGame = $("#game__playing");
@@ -228,6 +229,34 @@ $(function(){
   // --------------------------------------------------------------
 
   var startIntro = function(){
+
+    // create an array of all images required
+    var imagesToPreload = [];
+    $.each(characters, function(){
+      imagesToPreload.push(this.idle);
+      imagesToPreload.push(this.attack);
+      imagesToPreload.push(this.hurt);
+      imagesToPreload.push(this.death1);
+      imagesToPreload.push(this.death2);
+    });
+    var totalImagesToPreload = imagesToPreload.length;
+
+    // Update progress bar with zero counter
+    var $preloadBar = scIntro.find("progress");
+    $preloadBar.attr("max", totalImagesToPreload);
+
+    // transition to intro
+    transitionToScene(scIntro);
+
+    // preload images
+    $.each(imagesToPreload, function(i){
+      thisImage = i + 1;
+      $("<img />").attr("src", this);
+      $preloadBar.attr("value", thisImage);
+      if( thisImage == totalImagesToPreload ) {
+        startMainMenu();
+      }
+    });
 
   }
 
@@ -548,8 +577,11 @@ $(function(){
   //
   // --------------------------------------------------------------
 
+  // Start at intro
+  startIntro();
+
   // Start at main menu
-  startMainMenu();
+  // startMainMenu();
 
   // Start at character select screen
   // startCharacterSelect();

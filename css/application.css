@@ -29,8 +29,8 @@ body {
 
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
-  right: 0;
-  left: 90%; }
+  right: auto;
+  left: -25%; }
 
 .sc-main--title {
   position: absolute;
@@ -38,7 +38,8 @@ body {
   width: 100%;
   text-align: center;
   font-size: 3em;
-  font-weight: bold; }
+  font-weight: bold;
+  z-index: 5; }
 
 .sc-main--play {
   position: absolute;
@@ -276,6 +277,7 @@ DONE
 * Style health bars
 * Animations for character select screen
 * Pause Button
+* Title screen
 
 TODO
 * Character select keyboard controls
@@ -284,5 +286,5 @@ TODO
 * Success arrows
 * Failure arrows
 * Game over screen redesign
-* Title screen
+* Preloader
 */
