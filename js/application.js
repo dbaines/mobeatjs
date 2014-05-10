@@ -606,6 +606,10 @@ $(function(){
     updateCharacterSprite(player1, player1.playingAs.idle);
     updateCharacterSprite(player2, player2.playingAs.idle);
 
+    // update background
+    var $levelBackground = $("#game__playing");
+    $levelBackground.css("background-image", gameLevel);
+
     // show the appropriate pane
     transitionToScene(scInGame);
     roundStarted = true;

@@ -9,7 +9,9 @@
   z-index: 2;
 
   span + span {
-    margin-left: 20px;
+    margin-left: 10px;
+    border-left: 1px solid #666;
+    padding-left: 10px;
   }
 }
 
@@ -24,20 +26,23 @@
   > div {
     background: orange;
     padding: 6px;
-    padding-left: 20px;
+    padding-left: 25px;
     margin-top: -2px;
     margin-left: -15px;
     border: 2px solid #fff;
     border-left-width: 0;
     -webkit-transform: skew(-30deg);
     width: 75%;
+    font-family: "hvdComic", sans-serif;
+    font-size: 1.5em;
 
     &.character--player__active {
-      padding: 20px 60px 20px 42px;
-      margin-left: -20px;
+      padding: 10px 60px 10px 45px;
+      margin-left: -25px;
       background: purple;
       border-width: 5px 5px 5px 0;
       width: auto;
+      font-size: 1.8em;
     }
   }
   > div span {
