@@ -1,7 +1,7 @@
 // Back/Fight
 .character--navbar {
   height: 65px;
-  background: #666;
+  background: #666 url("../images/ui/colour-bg.png") top left no-repeat;
   box-shadow: 0 0 10px rgba(0,0,0,0.9);
   line-height: 65px;
   text-align: right;
@@ -49,6 +49,7 @@
 // Selected Character Details
 .character--current-selected {
   background: #bada55;
+  background: linear-gradient(137deg, #bada55, #a9a14b);
   height: 400px;
   position: relative;
   z-index: 1;
@@ -60,6 +61,7 @@
     left: 12%;
     color: #222;
     -webkit-transform: rotateZ(-12deg);
+    text-shadow: -2px -2px rgba(255,255,255,0.3)
   }
 
   h1 {
@@ -116,10 +118,13 @@
     height: 187px;
     overflow: hidden;
     border: 1px solid #000;
+    background: #222;
     float: left;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.3);
 
     &.selected {
       background: #bada55;
+      box-shadow: inset 0 0 15px 4px rgba(255,255,255,1);
     }
   }
 

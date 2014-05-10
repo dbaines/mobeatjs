@@ -82,7 +82,7 @@ img {
 
 .character--navbar {
   height: 65px;
-  background: #666;
+  background: #666666 url("../images/ui/colour-bg.png") top left no-repeat;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   line-height: 65px;
   text-align: right;
@@ -118,6 +118,7 @@ img {
 
 .character--current-selected {
   background: #bada55;
+  background: linear-gradient(137deg, #bada55, #a9a14b);
   height: 400px;
   position: relative;
   z-index: 1;
@@ -127,7 +128,8 @@ img {
     top: 23%;
     left: 12%;
     color: #222;
-    -webkit-transform: rotateZ(-12deg); }
+    -webkit-transform: rotateZ(-12deg);
+    text-shadow: -2px -2px rgba(255, 255, 255, 0.3); }
   .character--current-selected h1 {
     margin: 0;
     padding: 20px 0 0;
@@ -168,9 +170,12 @@ img {
     height: 187px;
     overflow: hidden;
     border: 1px solid #000;
-    float: left; }
+    background: #222;
+    float: left;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3); }
     .character--grid > div.selected {
-      background: #bada55; }
+      background: #bada55;
+      box-shadow: inset 0 0 15px 4px white; }
   .character--grid img {
     width: 261%;
     margin-left: -110%;
@@ -374,4 +379,15 @@ TODO
 * Game over screen redesign
 * Locked characters
 * Unlocking characters by completing levels
+* Fill out backgrounds
+* Complete character sketches
+* Complete Fuzz artwork
+* Complete Gunn artwork
+* Complete AJ artwork
+* Complete Nads artwork
+* Complete Manhands artwork
+* Complete Jamus artwork
+* Complete Em artwork
+* Complete Thabbo artwork
+* Complete Fabbian artwork
 */
