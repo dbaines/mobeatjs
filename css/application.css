@@ -11,6 +11,9 @@ body {
   background: #ccc;
   font-family: arial, sans-serif; }
 
+img {
+  pointer-events: none; }
+
 .game-container {
   width: 1024px;
   height: 768px;
@@ -20,6 +23,9 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   overflow: hidden; }
+
+.game__screen {
+  display: none; }
 
 .sc-main--character {
   position: absolute;
@@ -278,13 +284,14 @@ DONE
 * Animations for character select screen
 * Pause Button
 * Title screen
+* Preloader
 
 TODO
+* Level Select screen
 * Character select keyboard controls
 * Falling arrows
 * Arrow sillhouette
 * Success arrows
 * Failure arrows
 * Game over screen redesign
-* Preloader
 */
