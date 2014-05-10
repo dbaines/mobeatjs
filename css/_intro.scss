@@ -1,0 +1,19 @@
+.sc-intro--content {
+  position: relative;
+  top: 20%;
+  text-align: center;
+}
+
+.sc-intro--loading-bar {
+  background: #000;
+  height: 40px;
+  border-radius: 6px;
+
+  &::-webkit-progress-bar {
+    background: darken(#bada55,40);
+  }
+
+  &::-webkit-progress-value {
+    background: #bada55;
+  }
+}

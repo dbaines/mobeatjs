@@ -10,8 +10,11 @@
 
       <!-- Intro/Preloader -->
       <div id="game__intro" class="game__screen">
-        <h1>MoBeat Battle</h1>
-        <progress value="0" max="100"></progress>
+        <div class="sc-intro--content">
+          <img src="images/ui/logo.png" alt="mobeat battle" />
+          <p>loading...</p>
+          <progress value="0" max="100" class="sc-intro--loading-bar"></progress>
+        </div>
       </div>
 
       <!-- Main Menu Screen -->
@@ -26,7 +29,7 @@
           <img src="images/characters/blank.png" />
         </div>
         <div class="sc-main--play">
-          <button id="main__playBtn">Play Game</button>
+          <button id="main__playBtn" class="button">Play Game</button>
         </div>
       </div>
 

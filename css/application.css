@@ -29,6 +29,29 @@ img {
   width: 100%;
   height: 100%; }
 
+.button {
+  background: #bada55;
+  border: none;
+  color: #222;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 1.4em;
+  font-weight: bold; }
+
+.sc-intro--content {
+  position: relative;
+  top: 20%;
+  text-align: center; }
+
+.sc-intro--loading-bar {
+  background: #000;
+  height: 40px;
+  border-radius: 6px; }
+  .sc-intro--loading-bar::-webkit-progress-bar {
+    background: #425112; }
+  .sc-intro--loading-bar::-webkit-progress-value {
+    background: #bada55; }
+
 .sc-main--character {
   position: absolute;
   top: 0%;

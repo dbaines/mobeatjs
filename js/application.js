@@ -617,8 +617,8 @@ $(function(){
   //
   // --------------------------------------------------------------
 
-  // startIntro();
-  startMainMenu();
+  startIntro();
+  // startMainMenu();
   // startCharacterSelect();
   // startLevelSelect();
   // startRound();
