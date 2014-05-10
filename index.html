@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mobeat</title>
+    <link rel="stylesheet" href="css/application.css" />
+  </head>
+  <body>
+
+    <div id="game" class="game-container">
+
+      <!-- Main Menu Screen -->
+      <div id="game__main-menu" class="game__screen">
+        <div id="main__logo" class="sc-main--title">MoBeat Battle</div>
+        <div id="main__character1" class="sc-main--character">
+          <img src="images/characters/blank.png" />
+        </div>
+        <div id="main__character2" class="sc-main--character">
+          <img src="images/characters/blank.png" />
+        </div>
+        <div class="sc-main--play">
+          <button id="main__playBtn">Play Game</button>
+        </div>
+      </div>
+
+      <!-- Character Select -->
+      <div id="game__character-select" class="game__screen">
+
+        <div class="character--navbar">
+          <span id="character__backBtn">< Back</span>
+          <span id="character__fightBtn">Fight! ></span>
+        </div>
+
+        <div class="character--players">
+          <div class="character--player1 character--player__active" id="character__player1"><span>Player 1</span></div>
+          <div class="character--player2" id="character__player2"><span>Player 2</span></div>
+        </div>
+
+        <div class="character--current-selected">
+
+          <div class="character--current-selected--name">
+            <h1 id="character__name"></h1>
+            <p id="character__weapon"></p>
+          </div>
+
+          <div class="character--current-selected--face">
+            <img src="images/characters/blank.png" id="character__face" />
+          </div>
+
+        </div>
+
+        <div class="character--grid" id="character__grid">
+          <div class="character--grid--billeh selected" data-character="billeh">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+          <div class="character--grid--fuzz" data-character="thefuzz">
+            <img src="images/characters/thefuzz/idle.png" />
+          </div>
+          <div class="character--grid--jessbian" data-character="jessbian">
+            <img src="images/characters/gunn/idle.png" />
+          </div>
+          <div class="character--grid--aj" data-character="aj">
+            <img src="images/characters/aj/idle.png" />
+          </div>
+          <div class="character--grid--nads" data-character="nads">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+          <div class="character--grid--manhands" data-character="manhands">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+          <div class="character--grid--jamus" data-character="jamus">
+            <img src="images/characters/jamus/idle.png" />
+          </div>
+          <div class="character--grid--em" data-character="em">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+          <div class="character--grid--thabbo" data-character="thabbo">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+          <div class="character--grid--fabbian" data-character="fabbian">
+            <img src="images/characters/billeh/idle.png" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Level Select -->
+
+      <!-- InGame Screen -->
+      <div id="game__playing" class="game__screen scene-round">
+
+        <div id="round__arrowsLeft" class="sc-round--arrows-container">
+          .
+        </div>
+        <div id="round__arrowsRight" class="sc-round--arrows-container">
+          .
+        </div>
+
+        <div id="round__topUI" class="sc-round--top-ui">
+          <progress id="round__player1Life" class="sc-round--player-life sc-round--player1-life"></progress>
+          <progress id="round__player2Life" class="sc-round--player-life sc-round--player2-life"></progress>
+          <div id="round__timer" class="sc-round--timer"></div>
+        </div>
+
+        <img id="round__player1Character" class="sc-round--character sc-round--character_1" src="images/characters/blank.png" />
+        <img id="round__player2Character" class="sc-round--character sc-round--character_2" src="images/characters/blank.png" />
+
+        <button id="round__player1Attack" class="sc-round--attack sc-round--attack_1">Attack Player 2</button>
+        <button id="round__player2Attack" class="sc-round--attack sc-round--attack_2">Attack Player 1</button>
+
+        <div id="round__bottomUI" class="sc-round--bottom-ui">
+          <div id="round__pause" class="sc-round--pause">II</div>
+        </div>
+
+      </div>
+
+      <!-- OVERLAY: GAME OVER -->
+      <div class="overlay" id="overlay__game-over">
+        <h2>Game Over!</h2>
+        <p>Winner: <span id="game__game-over--winner"></span></p>
+        <p>
+          <button id="game__game-over--play-again">Play Again</button>
+          <button id="game__game-over--characters">Return to character select</button>
+        </p>
+      </div>
+
+      <!-- OVERLAY: PAUSED -->
+      <div class="overlay" id="overlay__paused">
+        <h2>Paused</h2>
+        <p>
+          <button id="overlay__paused--resume">Resume</button><br />
+          <button id="overlay__paused--exit">Exit Game</button>
+        </p>
+      </div>
+
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/application.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+// in-game settings
+$arrow-container-width:   200px;
+$character-width:         390px;
+$character-height:        auto;
+
+@import "game-container";
+@import "main-menu";
+@import "character-select";
+@import "scene-round";
+@import "overlays";
+
+
+
+/*
+
+DONE
+* Timer
+* Character select screen
+* End game when timer hits zero
+* Style health bars
+* Animations for character select screen
+* Pause Button
+
+TODO
+* Character select keyboard controls
+* Falling arrows
+* Arrow sillhouette
+* Success arrows
+* Failure arrows
+* Game over screen redesign
+* Title screen
+*/

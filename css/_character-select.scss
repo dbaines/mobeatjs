@@ -1,0 +1,128 @@
+// Back/Fight
+.character--navbar {
+  height: 65px;
+  background: #666;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  line-height: 65px;
+  text-align: right;
+  padding-right: 20px;
+  z-index: 2;
+
+  span + span {
+    margin-left: 20px;
+  }
+}
+
+
+// Player 1, Player 2 bars
+.character--players {
+  position: absolute;
+  z-index: 5;
+  top: 20px;
+  left: 0;
+
+  > div {
+    background: orange;
+    padding: 6px;
+    padding-left: 20px;
+    margin-top: -2px;
+    margin-left: -15px;
+    border: 2px solid #fff;
+    border-left-width: 0;
+    -webkit-transform: skew(-30deg);
+    width: 75%;
+
+    &.character--player__active {
+      padding: 20px 60px 20px 42px;
+      margin-left: -20px;
+      background: purple;
+      border-width: 5px 5px 5px 0;
+      width: auto;
+    }
+  }
+  > div span {
+    display: block;
+    -webkit-transform: skew(30deg);
+  }
+}
+
+// Selected Character Details
+.character--current-selected {
+  background: #bada55;
+  height: 400px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .character--current-selected--name {
+    position: absolute;
+    top: 23%;
+    left: 12%;
+    color: #222;
+    -webkit-transform: rotateZ(-12deg);
+  }
+
+  h1 {
+    margin: 0;
+    padding: 20px 0 0;
+    font-size: 5em;
+    -webkit-transition: all .2s;
+
+    &.transitioning {
+      -webkit-transform: translateY(-90px);
+      opacity: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    -webkit-transition: all .2s;
+
+    &.transitioning {
+      -webkit-transform: translateY(90px);
+      opacity: 0;
+    }
+  }
+
+  .character--current-selected--face {
+    position: absolute;
+    top: -302px;
+    right: -150px;
+    -webkit-transition: all .2s;
+
+    &.transitioning {
+      -webkit-transform: translateX(290px);
+      opacity: 0;
+    }
+  }
+}
+
+// Character selection grid
+.character--grid {
+  border: 5px solid #000;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: -75px;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  overflow: hidden;
+
+  > div {
+    width: 20%;
+    height: 187px;
+    overflow: hidden;
+    border: 1px solid #000;
+    float: left;
+
+    &.selected {
+      background: #bada55;
+    }
+  }
+
+  img {
+    width: 261%;
+    margin-left: -110%;
+    margin-top: -47%;
+  }
+}

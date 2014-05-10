@@ -1,0 +1,25 @@
+
+// Reset
+html,body {height: 100%;}
+* { box-sizing: border-box; }
+
+// Flex
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background: #ccc;
+  font-family: arial, sans-serif;
+}
+
+// Game container box
+.game-container {
+  width: 1024px;
+  height: 768px;
+  margin: 0 auto;
+  background: #222;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  color: #fff;
+  overflow: hidden;
+}

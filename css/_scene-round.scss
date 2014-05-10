@@ -1,0 +1,133 @@
+
+// Background
+.scene-round {
+  width: 100%;
+  height: 100%;
+  background: url("../images/backgrounds/01.jpg") top left no-repeat;
+}
+
+// Arrows containers
+.sc-round--arrows-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: $arrow-container-width;
+  background: #666;
+}
+.sc-round--arrows-container + .sc-round--arrows-container {
+  left: auto;
+  right: 0;
+}
+
+// Top UI
+.sc-round--top-ui {
+  margin: 0 $arrow-container-width;
+}
+.sc-round--player-life {
+  width: 43%;
+  float: left;
+  margin-left: 5%;
+  margin-top: -5px;
+  background: #222;
+  border: 5px solid #ccc;
+  height: 40px;
+
+  &::-webkit-progress-bar {
+    background: #222;
+  }
+
+  &::-webkit-progress-value {
+    background: red;
+    background-image: -webkit-linear-gradient(right, red, darken(red, 10%));
+  }
+}
+.sc-round--player-life:first-child {
+  -webkit-transform: rotateY(180deg);
+}
+.sc-round--player-life + .sc-round--player-life {
+  float: right;
+  margin-left: 0;
+  margin-right: 5%;
+}
+.sc-round--timer,
+.sc-round--pause {
+  width: 50px;
+  height: 50px;
+  background: #666;
+  text-align: center;
+  line-height: 41px;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  border: 5px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.sc-round--timer {
+  top: 0;
+  margin-top: -5px;
+  -webkit-border-radius: 50%;
+}
+.sc-round--pause {
+  bottom: 0;
+  margin-bottom: -5px;
+}
+
+// Player characters
+.sc-round--character {
+  position: absolute;
+  top: 160px;
+  width: $character-width;
+  height: $character-height;
+  z-index: 1;
+  pointer-events: none;
+}
+.sc-round--character__blink {
+  -webkit-animation: character-blink .2s linear infinite;
+  -webkit-transition: all, .5s;
+}
+.sc-round--character_1 {
+  left: 230px;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+
+  &.sc-round--character__blink {
+    margin-left: -30px;
+  }
+}
+.sc-round--character_2 {
+  right: 230px;
+
+  &.sc-round--character__blink {
+    margin-right: -30px;
+  }
+}
+
+@-webkit-keyframes character-blink {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// Attack buttons
+.sc-round--attack {
+  position: absolute;
+  bottom: 100px;
+}
+.sc-round--attack_1 {
+  left: 230px;
+}
+.sc-round--attack_2 {
+  right: 230px;
+}
+

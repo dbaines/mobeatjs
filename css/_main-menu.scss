@@ -1,0 +1,27 @@
+.sc-main--character {
+  position: absolute;
+  top: 0%;
+  -webkit-transform: scale(1.2);
+  right: -25%;
+}
+.sc-main--character + .sc-main--character {
+  -webkit-transform: scale(1.2) rotateY(180deg);
+  right: 0;
+  left: 90%;
+}
+
+.sc-main--title {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.sc-main--play {
+  position: absolute;
+  bottom: 20%;
+  text-align: center;
+  width: 100%;
+}
