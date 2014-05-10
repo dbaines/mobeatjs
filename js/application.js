@@ -257,11 +257,13 @@ $(function(){
     // preload images
     $.each(imagesToPreload, function(i){
       thisImage = i + 1;
-      $("<img />").attr("src", this);
       $preloadBar.attr("value", thisImage);
-      if( thisImage == totalImagesToPreload ) {
-        startMainMenu();
-      }
+      var $loadingImage = $("<img />").attr("src", this);
+      $loadingImage.on("load", function(){
+        if( thisImage == totalImagesToPreload ) {
+          startMainMenu();
+        }
+      });
     });
 
   }
