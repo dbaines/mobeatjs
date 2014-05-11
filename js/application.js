@@ -21,7 +21,7 @@ $(function(){
   attackingLifePoints = 10;
 
   // Character Objects
-  var billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo;
+  var billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo, fabbian;
   billeh = {};
     billeh.id = "billeh";
     billeh.name = "Billeh";
@@ -176,12 +176,13 @@ $(function(){
     }
 
   // Game DOM Elements
-  var gameScreens, scIntro, scMainMenu, scInGame, scGameOver, scCharacterSelect;
+  var gameScreens, scIntro, scMainMenu, scVersus, scInGame, scGameOver, scCharacterSelect;
   gameScreens = $(".game__screen");
   scIntro = $("#game__intro");
   scMainMenu = $("#game__main-menu");
   scCharacterSelect = $("#game__character-select");
   scLevelSelect = $("#game__level-select");
+  scVersus = $("#game__vs");
   scInGame = $("#game__playing");
   scGameOver = $("#game__game-over");
 
@@ -524,8 +525,24 @@ $(function(){
   // Fight button
   $("#levels__fightBtn").on("click", function(e){
     e.preventDefault();
-    startRound();
+    startVs();
   });
+
+  // --------------------------------------------------------------
+  //
+  // VERSUS SCREEN
+  //
+  // --------------------------------------------------------------
+
+  var startVs = function(){
+    $("#versus__character2").attr("data-character", player2.playingAs.name).find("img").attr("src", player2.playingAs.idle);
+    $("#versus__character1").attr("data-character", player1.playingAs.name).find("img").attr("src", player1.playingAs.idle);
+    transitionToScene(scVersus);
+
+    setTimeout(function(){
+      // startRound();
+    }, 2000);
+  }
 
   // --------------------------------------------------------------
   //
@@ -699,10 +716,11 @@ $(function(){
   //
   // --------------------------------------------------------------
 
-  startIntro();
+  // startIntro();
   // startMainMenu();
   // startCharacterSelect();
   // startLevelSelect();
+  startVs();
   // startRound();
 
 });

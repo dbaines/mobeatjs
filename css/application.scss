@@ -9,6 +9,7 @@ $comic-font:              "hvdComic", sans-serif;
 @import "main-menu";
 @import "character-select";
 @import "level-select";
+@import "versus";
 @import "scene-round";
 @import "overlays";
 @import "../fonts/stylesheet";
@@ -27,11 +28,11 @@ DONE
 * Level Select screen
 
 TODO
+* VS Screen
 * Arcade Mode - Tower Battles
 * Single Player mode
 * Two Player mode
 * Campaign Mode
-* VS Screen
 * Repreload at start of batte
 * Character select keyboard controls
 * Main menu keyboard controls

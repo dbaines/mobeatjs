@@ -1,0 +1,22 @@
+.sc-versus--character {
+  img {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:after {
+    content: attr(data-character);
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 0 0 4px #000;
+    top: 657px;
+    left: 0;
+    position: absolute;
+    z-index: 4;
+    font-family: $comic-font;
+  }
+}
+
+.sc-versus--character + .sc-versus--character:after {
+  -webkit-transform: rotateY(180deg);
+}
