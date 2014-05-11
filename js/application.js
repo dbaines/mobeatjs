@@ -260,7 +260,7 @@ $(function(){
       $preloadBar.attr("value", thisImage);
       var $loadingImage = $("<img />").attr("src", this);
       $loadingImage.on("load", function(){
-        if( thisImage == totalImagesToPreload ) {
+        if( (i+1) == totalImagesToPreload ) {
           startMainMenu();
         }
       });
