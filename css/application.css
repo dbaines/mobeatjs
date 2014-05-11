@@ -71,7 +71,7 @@ img {
 
 .sc-main--title {
   position: absolute;
-  top: 20%;
+  top: 9%;
   width: 100%;
   text-align: center;
   font-size: 3em;
@@ -81,12 +81,25 @@ img {
     display: block;
     margin: 0 auto; }
 
-.sc-main--play {
+.sc-main--buttons {
   position: absolute;
-  bottom: 20%;
+  bottom: 6%;
   text-align: center;
   width: 100%;
   z-index: 20; }
+
+.sc-main--buttons .button {
+  font-size: 1.6em;
+  line-height: 1.1;
+  padding: 36px 20px;
+  width: 16%;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6); }
+  .sc-main--buttons .button#main__settingsBtn {
+    line-height: 2.15;
+    top: 14px;
+    position: relative; }
+  .sc-main--buttons .button[disabled] {
+    opacity: 0.2; }
 
 .character--navbar {
   height: 65px;
@@ -390,13 +403,16 @@ DONE
 * Animations for character select screen
 * Pause Button
 * Title screen
-* Preloaderposition: absolute;
-top: 11px;
-right: 14px;
+* Preloader
 * Level Select screen
 
 TODO
+* Arcade Mode - Tower Battles
+* Single Player mode
+* Two Player mode
 * Campaign Mode
+* VS Screen
+* Repreload at start of batte
 * Character select keyboard controls
 * Main menu keyboard controls
 * Level select keyboard controls

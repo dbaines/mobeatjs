@@ -13,7 +13,7 @@
 
 .sc-main--title {
   position: absolute;
-  top: 20%;
+  top: 9%;
   width: 100%;
   text-align: center;
   font-size: 3em;
@@ -26,10 +26,28 @@
   }
 }
 
-.sc-main--play {
+.sc-main--buttons {
   position: absolute;
-  bottom: 20%;
+  bottom: 6%;
   text-align: center;
   width: 100%;
   z-index: 20;
+}
+
+.sc-main--buttons .button {
+  font-size: 1.6em;
+  line-height: 1.1;
+  padding: 36px 20px;
+  width: 16%;
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.6);
+
+  &#main__settingsBtn {
+    line-height: 2.15;
+    top: 14px;
+    position: relative;
+  }
+
+  &[disabled] {
+    opacity: 0.2;
+  }
 }

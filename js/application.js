@@ -2,7 +2,7 @@ $(function(){
 
   // Game Settings
   var seenIntro, player1, player2, players, playerCharacters,
-      maxLife, roundStarted, attackingLifePoints;
+      maxLife, roundStarted, attackingLifePoints, gameMode;
 
   // if false, shows intro screen before menu
   // will be set to true after intro has run it's course
@@ -13,6 +13,9 @@ $(function(){
 
   // Maximum player life
   maxLife = 100;
+
+  // Default game mode
+  gameMode = "twoPlayer";
 
   // Amount of life a player loses when attacked
   attackingLifePoints = 10;
@@ -111,7 +114,7 @@ $(function(){
     fabbian.death2 = "images/characters/billeh/death2.png";
 
   // All characters in an array
-  var characters = [billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo];
+  var characters = [billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo, fabbian];
 
   // Levels
   var gameLevel = "01";
@@ -228,6 +231,52 @@ $(function(){
 
   // --------------------------------------------------------------
   //
+  // GAME MODE SETTINGS
+  //
+  // --------------------------------------------------------------
+
+  var showPlayerToggles, showLevelSelector, showLadder, randomisePlayerTwo;
+
+  var setGameMode = function(mode){
+    gameMode = mode;
+
+    switch(gameMode) {
+      case "twoPlayer":
+        showPlayerToggles = true;
+        showLevelSelector = true;
+        randomisePlayerTwo = false;
+        showLadder = false;
+        break;
+      case "singlePlayer":
+        showPlayerToggles = false;
+        showLevelSelector = true;
+        randomisePlayerTwo = true;
+        showLadder = false;
+        break;
+      case "arcadeMode":
+        break;
+      case "storyMode":
+        break;
+      default:
+        showPlayerToggles = true;
+        showLevelSelector = true;
+        showLadder = false;
+        break;
+    }
+
+    if(showPlayerToggles) {
+      $(".character--players").show();
+    } else {
+      $(".character--players").hide();
+    }
+
+    if(!randomisePlayerTwo) {
+      setPlayerCharacter(player2, billeh);
+    }
+  }
+
+  // --------------------------------------------------------------
+  //
   // INTRO
   //
   // --------------------------------------------------------------
@@ -283,8 +332,27 @@ $(function(){
 
   $("#main__playBtn").on("click", function(e){
     e.preventDefault();
+    setGameMode("singlePlayer");
     startCharacterSelect();
   });
+
+  $("#main__twoPlayBtn").on("click", function(e){
+    e.preventDefault();
+    setGameMode("twoPlayer");
+    startCharacterSelect();
+  });
+
+  // $("#main__arcadeBtn").on("click", function(e){
+  //   e.preventDefault();
+  //   setGameMode("twoPlayer");
+  //   startCharacterSelect();
+  // });
+
+  // $("#main__storyBtn").on("click", function(e){
+  //   e.preventDefault();
+  //   setGameMode("twoPlayer");
+  //   startCharacterSelect();
+  // });
 
   var startMainMenu = function(){
 
@@ -411,6 +479,10 @@ $(function(){
 
   // Fight button
   $selected_fightButton.on("click", function(){
+    // randomise player two is a "single player" setting.
+    if(randomisePlayerTwo) {
+      setPlayerCharacter(player2, getRandomCharacter());
+    }
     startLevelSelect();
   });
 
