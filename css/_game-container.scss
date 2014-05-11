@@ -43,3 +43,7 @@ img {
   font-size: 1.4em;
   font-family: $comic-font;
 }
+
+.dupe {
+  -webkit-filter: hue-rotate(100deg);
+}

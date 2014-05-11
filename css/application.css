@@ -38,6 +38,9 @@ img {
   font-size: 1.4em;
   font-family: "hvdComic", sans-serif; }
 
+.dupe {
+  -webkit-filter: hue-rotate(100deg); }
+
 .sc-intro--content {
   position: relative;
   top: 20%;
@@ -441,6 +444,7 @@ TODO
 * Locked characters
 * Unlocking characters by completing levels
 * Fill out backgrounds
+* If player 2 is the same as player 1, hue rotate player 2 by 100deg
 * Complete character sketches
 * Complete Fuzz artwork
 * Complete Gunn artwork

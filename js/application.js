@@ -540,7 +540,7 @@ $(function(){
     transitionToScene(scVersus);
 
     setTimeout(function(){
-      // startRound();
+      startRound();
     }, 2000);
   }
 
@@ -699,6 +699,13 @@ $(function(){
     updateCharacterSprite(player1, player1.playingAs.idle);
     updateCharacterSprite(player2, player2.playingAs.idle);
 
+    // hue rotate player 2 if it's the same as player 1
+    if(player2.playingAs == player1.playingAs) {
+      player2.character.addClass("dupe");
+    } else {
+      player2.character.removeClass("dupe");
+    }
+
     // update background
     var $levelBackground = $("#game__playing");
     $levelBackground.css("background-image", gameLevel);
@@ -716,11 +723,11 @@ $(function(){
   //
   // --------------------------------------------------------------
 
-  // startIntro();
+  startIntro();
   // startMainMenu();
   // startCharacterSelect();
   // startLevelSelect();
-  startVs();
+  // startVs();
   // startRound();
 
 });
