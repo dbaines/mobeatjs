@@ -535,8 +535,18 @@ $(function(){
   // --------------------------------------------------------------
 
   var startVs = function(){
-    $("#versus__character2").attr("data-character", player2.playingAs.name).find("img").attr("src", player2.playingAs.idle);
-    $("#versus__character1").attr("data-character", player1.playingAs.name).find("img").attr("src", player1.playingAs.idle);
+    var $vsPlayer1 = $("#versus__character1");
+    var $vsPlayer2 = $("#versus__character2");
+
+    $vsPlayer1.attr("data-character", player1.playingAs.name).find("img").attr("src", player1.playingAs.idle);
+    $vsPlayer2.attr("data-character", player2.playingAs.name).find("img").attr("src", player2.playingAs.idle);
+
+    if(player2.playingAs == player1.playingAs) {
+      $vsPlayer2.addClass("dupe");
+    } else {
+      $vsPlayer2.removeClass("dupe");
+    }
+
     transitionToScene(scVersus);
 
     setTimeout(function(){
