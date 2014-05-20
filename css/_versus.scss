@@ -1,4 +1,14 @@
+.sc-versus--characters {
+
+}
+
 .sc-versus--character {
+  position: absolute;
+  top: 0%;
+  -webkit-transform: scale(1.2);
+  right: -57%;
+  pointer-events: none;
+
   img {
     position: relative;
     z-index: 3;
@@ -9,14 +19,22 @@
     font-size: 3em;
     color: #fff;
     text-shadow: 0 0 4px #000;
-    top: 657px;
-    left: 0;
+    top: 676px;
+    right: 651px;
     position: absolute;
     z-index: 4;
     font-family: $comic-font;
+    -webkit-transform: rotateZ(12deg);
   }
-}
 
-.sc-versus--character + .sc-versus--character:after {
-  -webkit-transform: rotateY(180deg);
+  &:first-child {
+    -webkit-transform: scale(1.2) rotateY(180deg);
+    left: -57%;
+    right: auto;
+  }
+
+  &:first-child:after {
+    -webkit-transform: rotateY(-180deg) rotateZ(-12deg);
+  }
+
 }
