@@ -2,7 +2,7 @@ $(function(){
 
   // Game Settings
   var seenIntro, player1, player2, players, playerCharacters,
-      maxLife, roundStarted, attackingLifePoints, gameMode;
+      maxLife, roundStarted, attackingLifePoints, gameMode, levelPath;
 
   // if false, shows intro screen before menu
   // will be set to true after intro has run it's course
@@ -16,6 +16,9 @@ $(function(){
 
   // Default game mode
   gameMode = "twoPlayer";
+
+  // Path for level images
+  levelPath = "images/backgrounds/";
 
   // Amount of life a player loses when attacked
   attackingLifePoints = 10;
@@ -71,7 +74,7 @@ $(function(){
     manhands.id = "manhands";
     manhands.name = "Manhands";
     manhands.weapon = "Boxing Gloves";
-    manhands.idle = "images/characters/billeh/idle.png";
+    manhands.idle = "images/characters/billeh/idle.svg";
     manhands.attack = "images/characters/billeh/attack.png";
     manhands.hurt = "images/characters/billeh/hurt.png";
     manhands.death1 = "images/characters/billeh/death1.png";
@@ -80,7 +83,7 @@ $(function(){
     nads.id = "nads";
     nads.name = "Nads";
     nads.weapon = "Whip";
-    nads.idle = "images/characters/billeh/idle.png";
+    nads.idle = "images/characters/billeh/idle.svg";
     nads.attack = "images/characters/billeh/attack.png";
     nads.hurt = "images/characters/billeh/hurt.png";
     nads.death1 = "images/characters/billeh/death1.png";
@@ -89,7 +92,7 @@ $(function(){
     em.id = "em";
     em.name = "Em";
     em.weapon = "Rapier";
-    em.idle = "images/characters/billeh/idle.png";
+    em.idle = "images/characters/billeh/idle.svg";
     em.attack = "images/characters/billeh/attack.png";
     em.hurt = "images/characters/billeh/hurt.png";
     em.death1 = "images/characters/billeh/death1.png";
@@ -98,7 +101,7 @@ $(function(){
     thabbo.id = "thabbo";
     thabbo.name = "Thabbo";
     thabbo.weapon = "Barrel";
-    thabbo.idle = "images/characters/billeh/idle.png";
+    thabbo.idle = "images/characters/billeh/idle.svg";
     thabbo.attack = "images/characters/billeh/attack.png";
     thabbo.hurt = "images/characters/billeh/hurt.png";
     thabbo.death1 = "images/characters/billeh/death1.png";
@@ -107,7 +110,7 @@ $(function(){
     fabbian.id = "fabbian";
     fabbian.name = "Fabbian";
     fabbian.weapon = "Guitar";
-    fabbian.idle = "images/characters/billeh/idle.png";
+    fabbian.idle = "images/characters/billeh/idle.svg";
     fabbian.attack = "images/characters/billeh/attack.png";
     fabbian.hurt = "images/characters/billeh/hurt.png";
     fabbian.death1 = "images/characters/billeh/death1.png";
@@ -117,7 +120,7 @@ $(function(){
   var characters = [billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo, fabbian];
 
   // Levels
-  var gameLevel = "01";
+  var gameLevel = levelPath + "01.svg";
 
   // Blank Character Image
   var blankCharacter = "images/characters/blank.png";
@@ -293,8 +296,8 @@ $(function(){
       imagesToPreload.push(this.death1);
       imagesToPreload.push(this.death2);
     });
-    imagesToPreload.push("images/backgrounds/map.jpg");
-    imagesToPreload.push("images/backgrounds/01.jpg");
+    imagesToPreload.push("images/backgrounds/map.svg");
+    imagesToPreload.push("images/backgrounds/01.svg");
     var totalImagesToPreload = imagesToPreload.length;
 
     // Update progress bar with zero counter
@@ -501,7 +504,7 @@ $(function(){
   var $levelSelectTiles = $(".sc-level--tile");
 
   var setLevel = function(level){
-    gameLevel = "/images/levels/" + level + ".jpg";
+    gameLevel = levelPath + level + ".svg";
   }
 
   var startLevelSelect = function(){
@@ -722,7 +725,7 @@ $(function(){
 
     // update background
     var $levelBackground = $("#game__playing");
-    $levelBackground.css("background-image", gameLevel);
+    $levelBackground.css("background-image", "url("+gameLevel+")");
 
     // show the appropriate pane
     transitionToScene(scInGame);

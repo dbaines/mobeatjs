@@ -1,17 +1,15 @@
 // Back/Fight
 .character--navbar {
-  height: 65px;
+  height: 90px;
   background: #666 url("../images/ui/colour-bg.png") top left no-repeat;
   box-shadow: 0 0 10px rgba(0,0,0,0.9);
-  line-height: 65px;
+  line-height: 90px;
   text-align: right;
   padding-right: 20px;
   z-index: 2;
 
   span + span {
     margin-left: 10px;
-    border-left: 1px solid #666;
-    padding-left: 10px;
   }
 }
 
@@ -20,7 +18,7 @@
 .character--players {
   position: absolute;
   z-index: 5;
-  top: 20px;
+  top: 30px;
   left: 0;
 
   > div {
@@ -55,7 +53,7 @@
 .character--current-selected {
   background: #bada55;
   background: linear-gradient(137deg, #bada55, #a9a14b);
-  height: 400px;
+  height: 376px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -96,9 +94,13 @@
 
   .character--current-selected--face {
     position: absolute;
-    top: -302px;
-    right: -150px;
+    top: -285px;
+    right: -400px;
     -webkit-transition: all .2s;
+
+    img {
+      width: 1320px;
+    }
 
     &.transitioning {
       -webkit-transform: translateX(290px);
@@ -134,8 +136,8 @@
   }
 
   img {
-    width: 261%;
-    margin-left: -110%;
-    margin-top: -47%;
+    width: 335%;
+    margin-left: -119%;
+    margin-top: -57%;
   }
 }

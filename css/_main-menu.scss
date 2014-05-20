@@ -2,13 +2,13 @@
   position: absolute;
   top: 0%;
   -webkit-transform: scale(1.2);
-  right: -25%;
+  right: -57%;
   pointer-events: none;
 }
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
   right: auto;
-  left: -25%;
+  left: -57%;
 }
 
 .sc-main--title {

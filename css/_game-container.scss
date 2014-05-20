@@ -44,6 +44,13 @@ img {
   font-family: $comic-font;
 }
 
+.button__small {
+  @extend .button;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.6);
+}
+
 .dupe {
   -webkit-filter: hue-rotate(100deg);
 }
