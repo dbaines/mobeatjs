@@ -251,7 +251,8 @@ $(function(){
   var unlockedCharacters = [];
 
   var generateUnlockedCharacters = function(){
-    $.each(characters, function(character){
+    $.each(characters, function(){
+      var character = this;
       if(character.locked == false){
         unlockedCharacters.push(character);
       }
@@ -385,6 +386,10 @@ $(function(){
     return characters[Math.floor(Math.random()*characters.length)];
   }
 
+  var getRandomUnlockedCharacter = function(){
+    return unlockedCharacters[Math.floor(Math.random()*unlockedCharacters.length)];
+  }
+
   $("#main__playBtn").on("click", function(e){
     e.preventDefault();
     setGameMode("singlePlayer");
@@ -412,8 +417,8 @@ $(function(){
   var startMainMenu = function(){
 
     // load in character faces
-    var leftCharacter = getRandomCharacter();
-    var rightCharacter = getRandomCharacter();
+    var leftCharacter = getRandomUnlockedCharacter();
+    var rightCharacter = getRandomUnlockedCharacter();
     mainMenuLeft.attr("src",leftCharacter.idle);
     mainMenuRight.attr("src",rightCharacter.idle);
 
