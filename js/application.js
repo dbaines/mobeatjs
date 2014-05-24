@@ -245,20 +245,41 @@ $(function(){
 
   // --------------------------------------------------------------
   //
-  // GENERATE AN ARRAY OF UNLOCKED CHARACTERS
+  // LOCKING AND UNLOCKING OF CHARACTERS
   //
   // --------------------------------------------------------------
   var unlockedCharacters = [];
+  var lockedCharacters = [];
 
   var generateUnlockedCharacters = function(){
+    // reset arrays
+    unlockedCharacters = [];
+    lockedCharacters = [];
+    // loop through each character and assign to either array
     $.each(characters, function(){
       var character = this;
       if(character.locked == false){
         unlockedCharacters.push(character);
+      } else {
+        lockedCharacters.push(character);
       }
     });
   }
+  // generate unlocked characters to begin with
   generateUnlockedCharacters();
+
+  var unlockCharacter = function(character){
+    character.locked = false;
+    generateUnlockedCharacters();
+    updateCharacterSelectionScreen();
+    alert("Unlocked " + character.name);
+  }
+
+  var lockCharacter = function(character) {
+    character.locked = true;
+    generateUnlockedCharacters();
+    updateCharacterSelectionScreen();
+  }
 
   // --------------------------------------------------------------
   //
@@ -272,7 +293,7 @@ $(function(){
     // generate list of characters
     $.each(characters, function(){
       var character = this;
-      var $characterTile = $("<div class='character--grid--"+character.id+"' data-character='"+character.id+"' />");
+      var $characterTile = $("<div class='character--grid--"+character.id+"' />").data("character", character);
       var $characterImage = $("<img src='"+character.idle+"' />");
       if(character.locked == true) {
         $characterTile.addClass("locked");
@@ -284,6 +305,20 @@ $(function(){
     $characterGrid.children().first().addClass("selected");
   }
   generateCharacterSelectionScreen();
+
+  // Update character selection dom with locked/unlocked characters
+  var updateCharacterSelectionScreen = function(){
+    var $characterGridTiles = $("#character__grid > div");
+    $.each($characterGridTiles, function(){
+      var $thisTile = $(this);
+      var thisCharacter = $thisTile.data("character");
+      if(thisCharacter.locked == true) {
+        $thisTile.addClass("locked");
+      } else {
+        $thisTile.removeClass("locked");
+      }
+    });
+  }
 
   // --------------------------------------------------------------
   //
@@ -390,6 +425,10 @@ $(function(){
     return unlockedCharacters[Math.floor(Math.random()*unlockedCharacters.length)];
   }
 
+  var getRandomLockedCharacter = function(){
+    return lockedCharacters[Math.floor(Math.random()*lockedCharacters.length)];
+  }
+
   $("#main__playBtn").on("click", function(e){
     e.preventDefault();
     setGameMode("singlePlayer");
@@ -486,7 +525,10 @@ $(function(){
     // update visual details on page
     selectCharacterDetails(player);
     // update character grid to reflect selected character
-    var $newTile = $selectCharacterButtons.filter("[data-character='"+currentPlayer.playingAs.id+"']");
+    var $newTile = $selectCharacterButtons.filter(function(){
+      return $(this).data("character") == currentPlayer.playingAs;
+    });
+
     updateCharacterTiles($newTile);
   }
 
@@ -511,13 +553,13 @@ $(function(){
   // Update character details when clicking on a face
   var updateCharacterTiles = function(tile) {
     // get associated character object
-    var newCharacter = eval(tile.data("character"));
+    var newCharacter = tile.data("character");
     // visual update of class
     tile.addClass(characterActiveTileClass).siblings().removeClass(characterActiveTileClass);
     setPlayerCharacter(currentPlayer,newCharacter);
     selectCharacterDetails(currentPlayer,newCharacter);
   }
-  $selectCharacterButtons.on("click", function(e){
+  $selectCharacterButtons.off("click").on("click", function(e){
     e.preventDefault();
     var $thisCharacterTile = $(this);
     // do nothing if the character is locked
@@ -525,7 +567,7 @@ $(function(){
       return false;
     }
     // do nothing if the player is already playing as this character
-    if($thisCharacterTile.data("character") == currentPlayer.playingAs.id) {
+    if($thisCharacterTile.data("character") == currentPlayer.playingAs) {
       return false;
     }
     updateCharacterTiles($thisCharacterTile);
@@ -643,6 +685,11 @@ $(function(){
     showOverlay(overlayGameOver);
     // Stop timer
     gameTimer.stop();
+
+    // unlock character
+    if(gameMode == "singlePlayer" && player2 == loser && player2.playingAs.locked == true) {
+      unlockCharacter(player2.playingAs);
+    }
   }
 
   // Play again button
