@@ -93,7 +93,7 @@
 // Player characters
 .sc-round--character {
   position: absolute;
-  top: 160px;
+  top: 150px;
   width: $character-width;
   height: $character-height;
   z-index: 1;
@@ -104,7 +104,7 @@
   -webkit-transition: all, .5s;
 }
 .sc-round--character_1 {
-  left: 230px;
+  left: 140px;
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
@@ -114,7 +114,7 @@
   }
 }
 .sc-round--character_2 {
-  right: 230px;
+  right: 140px;
 
   &.sc-round--character__blink {
     margin-right: -30px;

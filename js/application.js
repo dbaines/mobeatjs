@@ -34,6 +34,7 @@ $(function(){
     billeh.hurt = "images/characters/billeh/hurt.svg";
     billeh.death1 = "images/characters/billeh/death1.png";
     billeh.death2 = "images/characters/billeh/death2.png";
+    billeh.locked = false;
   thefuzz = {};
     thefuzz.id = "thefuzz";
     thefuzz.name = "Fuzz";
@@ -43,15 +44,17 @@ $(function(){
     thefuzz.hurt = "images/characters/thefuzz/hurt.png";
     thefuzz.death1 = "images/characters/thefuzz/death1.png";
     thefuzz.death2 = "images/characters/thefuzz/death2.png";
+    thefuzz.locked = false;
   jessbian = {};
     jessbian.id = "jessbian";
     jessbian.name = "Gunn";
     jessbian.weapon = "Gun Sword";
-    jessbian.idle = "images/characters/gunn/idle.png";
-    jessbian.attack = "images/characters/gunn/attack.png";
-    jessbian.hurt = "images/characters/gunn/hurt.png";
+    jessbian.idle = "images/characters/gunn/idle.svg";
+    jessbian.attack = "images/characters/gunn/attack.svg";
+    jessbian.hurt = "images/characters/gunn/hurt.svg";
     jessbian.death1 = "images/characters/gunn/death1.png";
     jessbian.death2 = "images/characters/gunn/death2.png";
+    jessbian.locked = false;
   jamus = {};
     jamus.id = "jamus";
     jamus.name = "Jamus";
@@ -61,6 +64,7 @@ $(function(){
     jamus.hurt = "images/characters/jamus/hurt.png";
     jamus.death1 = "images/characters/billeh/death1.png";
     jamus.death2 = "images/characters/billeh/death2.png";
+    jamus.locked = true;
   aj = {};
     aj.id = "aj";
     aj.name = "AJ";
@@ -70,6 +74,7 @@ $(function(){
     aj.hurt = "images/characters/aj/hurt.png";
     aj.death1 = "images/characters/aj/death1.png";
     aj.death2 = "images/characters/aj/death2.png";
+    aj.locked = true;
   manhands = {};
     manhands.id = "manhands";
     manhands.name = "Manhands";
@@ -79,6 +84,7 @@ $(function(){
     manhands.hurt = "images/characters/billeh/hurt.png";
     manhands.death1 = "images/characters/billeh/death1.png";
     manhands.death2 = "images/characters/billeh/death2.png";
+    manhands.locked = true;
   nads = {};
     nads.id = "nads";
     nads.name = "Nads";
@@ -88,6 +94,7 @@ $(function(){
     nads.hurt = "images/characters/billeh/hurt.png";
     nads.death1 = "images/characters/billeh/death1.png";
     nads.death2 = "images/characters/billeh/death2.png";
+    nads.locked = true;
   em = {};
     em.id = "em";
     em.name = "Em";
@@ -97,6 +104,7 @@ $(function(){
     em.hurt = "images/characters/billeh/hurt.png";
     em.death1 = "images/characters/billeh/death1.png";
     em.death2 = "images/characters/billeh/death2.png";
+    em.locked = true;
   thabbo = {};
     thabbo.id = "thabbo";
     thabbo.name = "Thabbo";
@@ -106,6 +114,7 @@ $(function(){
     thabbo.hurt = "images/characters/billeh/hurt.png";
     thabbo.death1 = "images/characters/billeh/death1.png";
     thabbo.death2 = "images/characters/billeh/death2.png";
+    thabbo.locked = true;
   fabbian = {};
     fabbian.id = "fabbian";
     fabbian.name = "Fabbian";
@@ -115,6 +124,7 @@ $(function(){
     fabbian.hurt = "images/characters/billeh/hurt.png";
     fabbian.death1 = "images/characters/billeh/death1.png";
     fabbian.death2 = "images/characters/billeh/death2.png";
+    fabbian.locked = true;
 
   // All characters in an array
   var characters = [billeh, thefuzz, jessbian, jamus, aj, manhands, nads, em, thabbo, fabbian];
@@ -232,6 +242,47 @@ $(function(){
       return player1;
     }
   }
+
+  // --------------------------------------------------------------
+  //
+  // GENERATE AN ARRAY OF UNLOCKED CHARACTERS
+  //
+  // --------------------------------------------------------------
+  var unlockedCharacters = [];
+
+  var generateUnlockedCharacters = function(){
+    $.each(characters, function(character){
+      if(character.locked == false){
+        unlockedCharacters.push(character);
+      }
+    });
+  }
+  generateUnlockedCharacters();
+
+  // --------------------------------------------------------------
+  //
+  // CREATING DOM FOR CHARACTER SELECT SCREEN
+  //
+  // --------------------------------------------------------------
+  var generateCharacterSelectionScreen = function(){
+    // empty existing html
+    var $characterGrid = $("#character__grid");
+    $characterGrid.html("");
+    // generate list of characters
+    $.each(characters, function(){
+      var character = this;
+      var $characterTile = $("<div class='character--grid--"+character.id+"' data-character='"+character.id+"' />");
+      var $characterImage = $("<img src='"+character.idle+"' />");
+      if(character.locked == true) {
+        $characterTile.addClass("locked");
+      }
+      $characterTile.append($characterImage);
+      $characterTile.appendTo($characterGrid);
+    });
+    // select first one by default
+    $characterGrid.children().first().addClass("selected");
+  }
+  generateCharacterSelectionScreen();
 
   // --------------------------------------------------------------
   //
@@ -464,6 +515,11 @@ $(function(){
   $selectCharacterButtons.on("click", function(e){
     e.preventDefault();
     var $thisCharacterTile = $(this);
+    // do nothing if the character is locked
+    if($thisCharacterTile.hasClass("locked")) {
+      return false;
+    }
+    // do nothing if the player is already playing as this character
     if($thisCharacterTile.data("character") == currentPlayer.playingAs.id) {
       return false;
     }
