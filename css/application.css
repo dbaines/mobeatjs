@@ -15,8 +15,10 @@ img {
   pointer-events: none; }
 
 .game-container {
-  width: 1024px;
-  height: 768px;
+  max-width: 1024px;
+  max-height: 768px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   background: #222222 url("../images/ui/colour-bg.png") top left no-repeat;
   position: relative;
@@ -71,6 +73,9 @@ img {
   -webkit-transform: scale(1.2);
   right: -57%;
   pointer-events: none; }
+  @media screen and (max-width: 850px) {
+    .sc-main--character {
+      display: none; } }
 
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
@@ -84,28 +89,54 @@ img {
   text-align: center;
   font-size: 3em;
   font-weight: bold;
-  z-index: 5; }
+  z-index: 5;
+  max-height: 41%; }
   .sc-main--title img {
     display: block;
-    margin: 0 auto; }
+    margin: 0 auto;
+    max-width: 95%;
+    max-height: 90%; }
 
 .sc-main--buttons {
   position: absolute;
   bottom: 6%;
   text-align: center;
   width: 100%;
-  z-index: 20; }
+  z-index: 20;
+  max-height: 44%;
+  font-size: 0;
+  line-height: 0; }
+
+.sc-main--button {
+  display: inline-block;
+  width: 16%; }
+  @media screen and (max-width: 850px) {
+    .sc-main--button {
+      width: 30%; } }
+  @media screen and (max-width: 450px) {
+    .sc-main--button {
+      width: 35%; } }
 
 .sc-main--buttons .button, .sc-main--buttons .button__small {
-  font-size: 1.6em;
+  font-size: 24px;
   line-height: 1.1;
   padding: 36px 20px;
-  width: 16%;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6); }
-  .sc-main--buttons .button#main__settingsBtn, .sc-main--buttons #main__settingsBtn.button__small {
-    line-height: 2.15;
-    top: 14px;
-    position: relative; }
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6);
+  display: block;
+  width: 100%; }
+  @media screen and (max-width: 850px) {
+    .sc-main--buttons .button, .sc-main--buttons .button__small {
+      font-size: 22px; } }
+  @media screen and (max-width: 450px) {
+    .sc-main--buttons .button, .sc-main--buttons .button__small {
+      font-size: 16px;
+      padding: 20px; } }
+  @media screen and (max-height: 480px) {
+    .sc-main--buttons .button, .sc-main--buttons .button__small {
+      padding: 18px; } }
+  @media screen and (max-width: 450px) {
+    .sc-main--buttons .button#main__settingsBtn, .sc-main--buttons #main__settingsBtn.button__small {
+      width: 70%; } }
   .sc-main--buttons .button[disabled], .sc-main--buttons [disabled].button__small {
     opacity: 0.2; }
 

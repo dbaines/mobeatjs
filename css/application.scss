@@ -4,6 +4,7 @@ $character-width:         470px;
 $character-height:        auto;
 $comic-font:              "hvdComic", sans-serif;
 
+@import "mixins";
 @import "game-container";
 @import "intro";
 @import "main-menu";

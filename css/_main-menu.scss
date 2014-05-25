@@ -4,6 +4,10 @@
   -webkit-transform: scale(1.2);
   right: -57%;
   pointer-events: none;
+
+  @include mq(850px) {
+    display: none;
+  }
 }
 .sc-main--character + .sc-main--character {
   -webkit-transform: scale(1.2) rotateY(180deg);
@@ -19,10 +23,13 @@
   font-size: 3em;
   font-weight: bold;
   z-index: 5;
+  max-height: 41%;
 
   img {
     display: block;
     margin: 0 auto;
+    max-width: 95%;
+    max-height: 90%;
   }
 }
 
@@ -32,19 +39,50 @@
   text-align: center;
   width: 100%;
   z-index: 20;
+  max-height: 44%;
+  font-size: 0;
+  line-height: 0;
+}
+
+.sc-main--button {
+  display: inline-block;
+  width: 16%;
+
+  @include mq(850px) {
+    width: 30%;
+  }
+
+  @include mq(450px) {
+    width: 35%;
+  }
+
 }
 
 .sc-main--buttons .button {
-  font-size: 1.6em;
+  font-size: 24px;
   line-height: 1.1;
   padding: 36px 20px;
-  width: 16%;
   box-shadow: inset 0 0 20px rgba(255,255,255,0.6);
+  display: block;
+  width: 100%;
+
+  @include mq(850px) {
+    font-size: 22px
+  }
+
+  @include mq(450px) {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  @include mq(480px, height) {
+    padding: 18px;
+  }
 
   &#main__settingsBtn {
-    line-height: 2.15;
-    top: 14px;
-    position: relative;
+    @include mq(450px) {
+      width: 70%;
+    }
   }
 
   &[disabled] {

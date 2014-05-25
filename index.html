@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Mobeat</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=0.6667"/>
     <link rel="stylesheet" href="css/application.css" />
   </head>
   <body>
@@ -28,12 +29,22 @@
         <div id="main__character2" class="sc-main--character">
           <img src="images/characters/blank.png" />
         </div>
-        <div class="sc-main--buttons">
-          <button id="main__storyBtn" class="button" disabled>Story Mode</button>
-          <button id="main__arcadeBtn" class="button" disabled>Arcade Mode</button>
-          <button id="main__playBtn" class="button">Single Player</button>
-          <button id="main__twoPlayBtn" class="button">Two Player</button>
-          <button id="main__settingsBtn" class="button" disabled>Settings</button>
+        <div class="sc-main--buttons" data-conform-columns>
+          <div class="sc-main--button" data-conform>
+            <button id="main__storyBtn" class="button" disabled>Story <br />Mode</button>
+          </div>
+          <div class="sc-main--button" data-conform>
+            <button id="main__arcadeBtn" class="button" disabled>Arcade <br />Mode</button>
+          </div>
+          <div class="sc-main--button" data-conform>
+            <button id="main__playBtn" class="button">Single <br />Player</button>
+          </div>
+          <div class="sc-main--button" data-conform>
+            <button id="main__twoPlayBtn" class="button">Two <br />Player</button>
+          </div>
+          <div class="sc-main--button" data-conform>
+            <button id="main__settingsBtn" class="button" disabled>Settings</button>
+          </div>
         </div>
       </div>
 
@@ -182,6 +193,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/application.js"></script>
+    <script src="js/plugins.js"></script>
 
   </body>
 </html>

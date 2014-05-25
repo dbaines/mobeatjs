@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1508.923px" height="1422.555px" viewBox="0 0 1508.923 1422.555" enable-background="new 0 0 1508.923 1422.555"
+	 xml:space="preserve">
+<g id="Idle">
+	<g id="legs">
+	</g>
+	<g id="head">
+	</g>
+	<g id="body">
+	</g>
+	<g id="arms">
+	</g>
+	<g id="weapon">
+	</g>
+	<g id="Layer_12">
+	</g>
+</g>
+<g id="Attack">
+	<g id="legs_copy">
+		<path stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M729.891,1309.912c-4.339-0.663-109.66,48-109.66,48v32.667h186.655C806.886,1390.579,748.031,1312.684,729.891,1309.912z"/>
+		<path stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M923.553,1303.578c-4.339-0.663-109.66,48-109.66,48v32.667h186.655C1000.548,1384.245,941.693,1306.35,923.553,1303.578z"/>
+		
+			<path fill="#242F44" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M843.553,933.911l37.333,224l37.001,6.667c0,0,24.333,91.333,19.333,104.333c-6.518,16.945-26.405,22.605-28.417,31.66
+			c0,0,53.084,76.007,51.417,82.34s160.333,0,160.333,0s-14.999-45.667-26.666-66s-84-204.666-87.667-221c0,0-25.334-6-24.167-10
+			s11.834,0.666,11.834,0.666s-6.668-9-11.834-30.333s-13.166-138-13.166-138L843.553,933.911z"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M906.883,1162.596c0,0,31.337,5.982,33.337,5.982"/>
+		
+			<path fill="#242F44" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M959.507,918.244l22.546,43.001c0,0-106.161,128.999-151.997,159.166h-15.003l15.003,9.5c0,0,26.833,130.002,50.166,179.335
+			s31.333,81.333,31.333,81.333h-126c0,0-64.666-60.001-80.667-68.667c0,0-4.439-16,3.447-19.333s13.556-10,13.556-10
+			s8.971-123.984,11.317-126.992s-15.653-59.008-19.653-63.008c0,0,89.334-137.333,120.667-161.333S959.507,918.244,959.507,918.244
+			z"/>
+	</g>
+	<g id="head_copy">
+		<path fill="#181304" stroke="#000000" stroke-width="6" stroke-miterlimit="10" d="M733.063,410.457
+			c0,0-26.011,1.955-24.011-31.545s17-48.5,33.5-64l7.5,7.5c0,0,19-21.5,53.5-30l-4,20c0,0,24.5-12.5,61.5-12.5v11
+			c0,0,40.5-10,77.5-0.5l-3.793,19.5c0,0,9.793,14.5,17.293,40.5s17.5,128.5-29,164s-92.5,6.5-92.5,6.5L733.063,410.457"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="6.3457" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M907.887,536.911l21.666,55.667c0,0,10.001,54.333-26.666,57s-72,7-72,7s-19.666-54.333-21-57.333s51.334-70.167,64-73.083
+			s33,9.083,33,9.083"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="6.3457" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M721.068,408.255c0,0-18.805,87.081,22.287,216.989l148.352-47.109l-6.269-38.544c0,0,24.376,14.276,34.823,9.28
+			c10.447-4.997,22.289-41.4,7.662-79.944l-64.772,34.261c0,0-16.716-39.258,2.089-94.933c0,0-4.179-29.265-36.217-24.982
+			C796.984,387.556,747.535,418.962,721.068,408.255z"/>
+		<ellipse fill="#FFFFFF" cx="761.803" cy="477.411" rx="7.75" ry="7"/>
+		<path d="M750.553,475.245c0,0-1,18.667,14.667,18.667s11.333-30,11.333-30l-10.333,5.333c0,0,0.667,13.333-4,13.333
+			s-5-10.667-5-10.667L750.553,475.245z"/>
+		<path d="M731.553,436.911c0,0-4.666,46,10.334,46.333s83.88-38,83.88-38l9.453,10.667c0,0,8.333-39.666-11-37.333
+			s-76.333,43-76.333,43S735.219,458.244,731.553,436.911z"/>
+		<path fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" d="M742.303,539.411
+			c-0.25-0.75-4.25-27.25-4.25-27.25s40.25-6.75,62.5,10.25"/>
+		<path fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" d="M888.053,526.161
+			c0,0,5.75-27,18.25-28.75l3.75,17.5"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="6.3457" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M900.553,526.161c0,0,4.059-10.724-6.721-16.612"/>
+		<path fill="#DDDDDD" stroke="#000000" stroke-width="6" stroke-miterlimit="10" d="M1009.053,642.911c0,0,3-33.5-9.5-45
+			s-50.5-6.771-50.5-6.771l-8.5-15.729c-101.5,35.5-140,78.25-140,78.25s2,5.25,0,6.75L1009.053,642.911z"/>
+	</g>
+	<g id="body_copy">
+		<path fill="#30497D" stroke="#000000" stroke-width="6" stroke-linejoin="round" stroke-miterlimit="10" d="M787.251,650.736
+			c0,0,145-54.667,219.5-47.167c0,0,11.5,40.5-4,81.5s-49.576,59.5-49.576,59.5l0.777,7.426l16.299,155.574l7,15l-153,17.5v-16
+			c0,0-35.5-13-30-56.5s15.5-66.5,15.5-66.5S788.251,737.902,787.251,650.736z"/>
+		
+			<line fill="#E4DDC9" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="946.22" y1="667.245" x2="954.507" y2="760.249"/>
+		<path fill="none" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M931.803,914.911c0-4.25-1.004-19.002-1.004-19.002s-39.916-37.334-46.582-84l-69.164-4.998"/>
+	</g>
+	<g id="arms_copy">
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M459.183,643.069c0,0-3.022,20.393,2.572,32.77c5.595,12.378,7.397,28.165,7.397,28.165l90.094,5.876l1.258-76.312l-9.721-16.395
+			c0,0,0.138-20.357-12.578-32l-124.58,13.409c0,0-2.862,22.623,7.383,31.08C431.254,638.12,459.183,643.069,459.183,643.069z"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M480.876,692.403c0,0,6.832-11.025-1.533-18.272c-8.366-7.247-13.806-12.16-17.534-30.875"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M454.683,677.751c0,0,7.541-7.462,23.023-0.688l1.781,39.105c0,0-3.696,4.218-15.833-2.05
+			C452.19,708.2,454.683,677.751,454.683,677.751z"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M505.672,716.098c0,0-9.434,2.217-26.185,0.07l-2.753-40.745c0,0,14.055-3.348,27.003,2.935L505.672,716.098z"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M529.192,718.108c0,0-10.31,1.615-23.521-2.01l-1.618-35.525c0,0,18.613-3.082,24.654,1.346L529.192,718.108z"/>
+		
+			<path fill="#E4DDC9" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M529.192,718.108c0,0,9.409,4.011,14.785,0.823c6.864-4.069,4.017-29.991,4.017-29.991l-19.205-0.956L529.192,718.108z"/>
+		
+			<path fill="#30497D" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M952.582,680.483c0,0-11.828-67.673-77.848-91.441l-31.995,27.743l-94.443,8.787l-23.226-26.214c0,0-110.188,5.002-159.364,24.021
+			l-14.728-9.153l-6.711,101.104l201.175,16.43c0,0,8.573,17.075,10.294,16.055c1.721-1.02,28.372-20.121,28.372-20.121
+			s71.718,9.213,125.437-8.687"/>
+	</g>
+	<g id="weapon_copy">
+		
+			<path fill="#8B8B8B" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M333.813,574.406L51.951,594.455c0,0,68.467,41.948,115.688,47.083c47.222,5.137,192.235-27.781,192.235-27.781L333.813,574.406z"
+			/>
+		
+			<path fill="#A5A5A5" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M378.171,638.785l-191.635,13.057c0,0-68.091,0.844-134.585-57.387c0,0,76.463,37.788,130.486,37.729
+			c54.022-0.06,158.763-20.888,158.763-20.888L378.171,638.785z"/>
+		
+			<path fill="#606060" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M327.436,603.21l-0.505,11.896c0,0,40.865,7.16,51.24,23.679l0.135-41.642L327.436,603.21z"/>
+		
+			<path fill="#606060" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M389.759,596.039c0,0-5.001,24.116,8.882,36.422c13.884,12.307,60.266,12.894,60.266,12.894s-40.106-8.957-48.096-22.434
+			c-7.99-13.475-1.204-28.797-1.204-28.797L389.759,596.039z"/>
+		
+			<path fill="#8B8B8B" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M304.566,518.989c0,0,15.164-1.979,15.955-0.644c1.021,1.72,0.157,35.559,0.157,35.559l-12.272,2.079L304.566,518.989z"/>
+		
+			<path fill="#606060" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M518.998,497.549c0,0,35.058,46.643,19.685,87.614l-213.899,20.639l-9.596-95.146L518.998,497.549z"/>
+		
+			<path fill="none" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M319.772,559.212c0,0,15.444-10.198,17.622-10.447c2.177-0.249,186.266-13.288,186.266-13.288s13.773-4.777,8.727-14.74"/>
+		
+			<polyline fill="#8B8B8B" stroke="#000000" stroke-width="5.1462" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			378.561,506.582 383.588,545.428 440.71,541.361 434.654,502.973 380.694,506.443 		"/>
+	</g>
+	<g id="Layer_19">
+		<path fill="#EBFF9F" d="M297.564,513.904l-91.652-45.332l55.969,55.629l-138.248,22.383l135.775,20.456l-35.223,57.234
+			l76.913-64.907l-39.763,22.631l19.75-29c0,0-80.443-6.138-77.847-7.569s79.094-12.279,79.094-12.279l-32.997-35.6L297.564,513.904
+			z"/>
+	</g>
+</g>
+<g id="Hurt">
+	<g id="legs_copy_2">
+	</g>
+	<g id="head_copy_2">
+	</g>
+	<g id="body_copy_2">
+	</g>
+	<g id="arms_copy_2">
+	</g>
+	<g id="weapon_copy_2">
+	</g>
+</g>
+<g id="Death_1">
+	<g id="legs_1_">
+	</g>
+	<g id="head_x5C_">
+	</g>
+	<g id="body_1_">
+	</g>
+	<g id="arms_2_">
+	</g>
+</g>
+<g id="Death_2">
+	<g id="legs_2_">
+	</g>
+	<g id="head_1_">
+	</g>
+	<g id="body_2_">
+	</g>
+	<g id="arms_1_">
+	</g>
+</g>
+<g id="Labels">
+</g>
+</svg>
