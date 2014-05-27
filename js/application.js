@@ -2,7 +2,11 @@ $(function(){
 
   // Game Settings
   var seenIntro, player1, player2, players, playerCharacters,
-      maxLife, roundStarted, attackingLifePoints, gameMode, levelPath;
+      maxLife, roundStarted, attackingLifePoints, gameMode, levelPath,
+      debug;
+
+  // debug mode
+  debug = true;
 
   // if false, shows intro screen before menu
   // will be set to true after intro has run it's course
@@ -32,8 +36,8 @@ $(function(){
     billeh.idle = "images/characters/billeh/billeh_idle.svg";
     billeh.attack = "images/characters/billeh/billeh_attack.svg";
     billeh.hurt = "images/characters/billeh/billeh_hurt.svg";
-    billeh.death1 = "images/characters/billeh/billeh_death1.png";
-    billeh.death2 = "images/characters/billeh/billeh_death2.png";
+    billeh.death1 = "images/characters/billeh/billeh_death1.svg";
+    billeh.death2 = "images/characters/billeh/billeh_death2.svg";
     billeh.locked = false;
   thefuzz = {};
     thefuzz.id = "thefuzz";
@@ -243,6 +247,13 @@ $(function(){
     }
   }
 
+  // debug function
+  var debug = function(text){
+    if(debug) {
+      console.log(text);
+    }
+  }
+
   // --------------------------------------------------------------
   //
   // LOCKING AND UNLOCKING OF CHARACTERS
@@ -251,19 +262,47 @@ $(function(){
   var unlockedCharacters = [];
   var lockedCharacters = [];
 
+  // Load unlocked characters from localStorage
+  var unlockCharactersFromLocalStorage = function(){
+    if(localStorage.unlockedCharacters) {
+      $.each(JSON.parse(localStorage.getItem('unlockedCharacters')), function(){
+        var character = eval(this);
+        $.map( characters, function( real_character, i ) {
+          if(character.id == real_character.id) {
+            real_character.locked = false;
+          }
+        })
+        debug("unlocking from localStorage: " + character.name);
+      });
+    }
+  }
+
+  // Create new storage area if nothing exists
+  if(!localStorage.unlockedCharacters) {
+    debug("no storage found, creating new storage area.");
+    localStorage.setItem("unlockedCharacters", JSON.stringify(unlockedCharacters));
+  } else {
+    debug("storage found. getting unlocked characters from storage");
+  }
+
   var generateUnlockedCharacters = function(){
     // reset arrays
     unlockedCharacters = [];
     lockedCharacters = [];
+    unlockCharactersFromLocalStorage();
     // loop through each character and assign to either array
     $.each(characters, function(){
       var character = this;
+      debug("checking if character should be unlocked: " + character.name + ", Locked: " + character.locked );
       if(character.locked == false){
         unlockedCharacters.push(character);
       } else {
         lockedCharacters.push(character);
       }
     });
+    // update local storage
+    localStorage.clear("unlockedCharacters");
+    localStorage.setItem("unlockedCharacters", JSON.stringify(unlockedCharacters));
   }
   // generate unlocked characters to begin with
   generateUnlockedCharacters();
@@ -841,6 +880,22 @@ $(function(){
 
   }
 
+
+  // --------------------------------------------------------------
+  //
+  // SETTINGS
+  //
+  // --------------------------------------------------------------
+
+  var settingResetUnlocks = function() {
+    $.each(character, function(){
+      if( character.id === "billeh" || character.id === "thefuzz" || character.id === "jessbian" ) {
+        character.locked = false;
+      } else {
+        character.locked = true;
+      }
+    });
+  }
 
   // --------------------------------------------------------------
   //
