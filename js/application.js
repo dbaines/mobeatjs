@@ -34,6 +34,7 @@ $(function(){
     billeh.name = "Billeh";
     billeh.weapon = "Frying Pan";
     billeh.idle = "images/characters/billeh/billeh_idle.svg";
+    billeh.idle2 = "images/characters/billeh/billeh_idle2.svg";
     billeh.attack = "images/characters/billeh/billeh_attack.svg";
     billeh.hurt = "images/characters/billeh/billeh_hurt.svg";
     billeh.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -44,6 +45,7 @@ $(function(){
     thefuzz.name = "Fuzz";
     thefuzz.weapon = "Mace";
     thefuzz.idle = "images/characters/billeh/billeh_idle.svg";
+    thefuzz.idle2 = "images/characters/billeh/billeh_idle2.svg";
     thefuzz.attack = "images/characters/billeh/billeh_attack.svg";
     thefuzz.hurt = "images/characters/billeh/billeh_hurt.svg";
     thefuzz.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -54,6 +56,7 @@ $(function(){
     jessbian.name = "Gunn";
     jessbian.weapon = "Gun Sword";
     jessbian.idle = "images/characters/gunn/gunn_idle.svg";
+    jessbian.idle2 = "images/characters/gunn/gunn_idle.svg";
     jessbian.attack = "images/characters/gunn/gunn_attack.svg";
     jessbian.hurt = "images/characters/gunn/gunn_hurt.svg";
     jessbian.death1 = "images/characters/gunn/gunn_death1.svg";
@@ -64,6 +67,7 @@ $(function(){
     jamus.name = "Jamus";
     jamus.weapon = "Buster Sword";
     jamus.idle = "images/characters/billeh/billeh_idle.svg";
+    jamus.idle2 = "images/characters/billeh/billeh_idle2.svg";
     jamus.attack = "images/characters/billeh/billeh_attack.svg";
     jamus.hurt = "images/characters/billeh/billeh_hurt.svg";
     jamus.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -74,6 +78,7 @@ $(function(){
     aj.name = "AJ";
     aj.weapon = "Gun Arm";
     aj.idle = "images/characters/billeh/billeh_idle.svg";
+    aj.idle2 = "images/characters/billeh/billeh_idle2.svg";
     aj.attack = "images/characters/billeh/billeh_attack.svg";
     aj.hurt = "images/characters/billeh/billeh_hurt.svg";
     aj.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -84,6 +89,7 @@ $(function(){
     manhands.name = "Manhands";
     manhands.weapon = "Boxing Gloves";
     manhands.idle = "images/characters/billeh/billeh_idle.svg";
+    manhands.idle2 = "images/characters/billeh/billeh_idle2.svg";
     manhands.attack = "images/characters/billeh/billeh_attack.svg";
     manhands.hurt = "images/characters/billeh/billeh_hurt.svg";
     manhands.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -94,6 +100,7 @@ $(function(){
     nads.name = "Nads";
     nads.weapon = "Whip";
     nads.idle = "images/characters/billeh/billeh_idle.svg";
+    nads.idle2 = "images/characters/billeh/billeh_idle2.svg";
     nads.attack = "images/characters/billeh/billeh_attack.svg";
     nads.hurt = "images/characters/billeh/billeh_hurt.svg";
     nads.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -104,6 +111,7 @@ $(function(){
     em.name = "Em";
     em.weapon = "Rapier";
     em.idle = "images/characters/billeh/billeh_idle.svg";
+    em.idle2 = "images/characters/billeh/billeh_idle2.svg";
     em.attack = "images/characters/billeh/billeh_attack.svg";
     em.hurt = "images/characters/billeh/billeh_hurt.svg";
     em.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -114,6 +122,7 @@ $(function(){
     thabbo.name = "Thabbo";
     thabbo.weapon = "Barrel";
     thabbo.idle = "images/characters/billeh/billeh_idle.svg";
+    thabbo.idle2 = "images/characters/billeh/billeh_idle2.svg";
     thabbo.attack = "images/characters/billeh/billeh_attack.svg";
     thabbo.hurt = "images/characters/billeh/billeh_hurt.svg";
     thabbo.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -124,6 +133,7 @@ $(function(){
     fabbian.name = "Fabbian";
     fabbian.weapon = "Guitar";
     fabbian.idle = "images/characters/billeh/billeh_idle.svg";
+    fabbian.idle2 = "images/characters/billeh/billeh_idle2.svg";
     fabbian.attack = "images/characters/billeh/billeh_attack.svg";
     fabbian.hurt = "images/characters/billeh/billeh_hurt.svg";
     fabbian.death1 = "images/characters/billeh/billeh_death1.svg";
@@ -809,6 +819,16 @@ $(function(){
     pauseGame();
   });
 
+  var playerIdle = function(player) {
+    updateCharacterSprite(player, player.playingAs.idle2);
+    player.timeout = setTimeout(function(){
+      updateCharacterSprite(player, player.playingAs.idle);
+    }, 1000);
+    player.timeout = setTimeout(function(){
+      playerIdle(player);
+    }, 2000);
+  }
+
   // Player attacks another player
   var playerAttack = function(attackingPlayer) {
     hurtPlayer = getOtherPlayer(attackingPlayer);
@@ -818,7 +838,7 @@ $(function(){
     clearTimeout(attackingPlayer.timeout);
     updateCharacterSprite(attackingPlayer, attackingPlayer.playingAs.attack);
     attackingPlayer.timeout = setTimeout(function(){
-      updateCharacterSprite(attackingPlayer, attackingPlayer.playingAs.idle);
+      playerIdle(attackingPlayer);
     }, 200);
     // Player hurt animation
     clearTimeout(hurtPlayer.timeout);
@@ -826,7 +846,7 @@ $(function(){
     hurtPlayer.character.addClass(hurtPlayerClass);
     hurtPlayer.timeout = setTimeout(function(){
       hurtPlayer.character.removeClass(hurtPlayerClass);
-      updateCharacterSprite(hurtPlayer, hurtPlayer.playingAs.idle);
+      playerIdle(hurtPlayer);
     }, 500);
     // Change health to reflect
     hurtPlayer.playerLife = hurtPlayer.playerLife - attackingLifePoints;
@@ -877,6 +897,9 @@ $(function(){
     // show the appropriate pane
     transitionToScene(scInGame);
     roundStarted = true;
+
+    playerIdle(player1);
+    playerIdle(player2);
 
   }
 
