@@ -901,6 +901,10 @@ $(function(){
     var $levelBackground = $("#game__playing");
     $levelBackground.css("background-image", "url("+gameLevel+")");
 
+    // removing death states
+    player1.character.removeClass("dead");
+    player2.character.removeClass("dead");
+
     // show the appropriate pane
     transitionToScene(scInGame);
     roundStarted = true;
