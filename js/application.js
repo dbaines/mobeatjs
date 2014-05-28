@@ -723,9 +723,10 @@ $(function(){
   var gameOver = function(winner){
     // Play Loser Animation
     var loser = getOtherPlayer(winner);
-    updateCharacterSprite(loser, loser.playingAs.death1);
     clearTimeout(loser.timeout);
+    updateCharacterSprite(loser, loser.playingAs.death1);
     loser.character.removeClass(hurtPlayerClass);
+    loser.character.addClass("dead");
     loser.timeout =  setTimeout(function(){
       updateCharacterSprite(loser, loser.playingAs.death2);
     }, 300);
@@ -822,9 +823,15 @@ $(function(){
   var playerIdle = function(player) {
     updateCharacterSprite(player, player.playingAs.idle2);
     player.timeout = setTimeout(function(){
+      if(player.character.hasClass("dead")) {
+        return false;
+      }
       updateCharacterSprite(player, player.playingAs.idle);
     }, 1000);
     player.timeout = setTimeout(function(){
+      if(player.character.hasClass("dead")) {
+        return false;
+      }
       playerIdle(player);
     }, 2000);
   }
